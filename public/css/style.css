@@ -1,0 +1,240 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-185deg, transparent 60%, #F6C90E 10%), linear-gradient(200deg, transparent 40%, #FFFFFF 90%);
+    z-index: -1;
+    animation: moveBackground 5s infinite alternate; /* Animation chuyển động lên xuống */
+}
+
+@keyframes moveBackground {
+    0% {
+        height: 110%;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+
+.container {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    padding: 20px 0; /* Điều chỉnh padding trên và dưới để tạo khoảng cách */
+}
+.table-container {
+    position: relative;
+    border: 1px solid #777777;
+    border-radius: 25px;
+    padding: 28px;
+    width: 300px;
+    height: 600px;
+    margin: 0 30px;
+    background-color: #FFFFFF; /* Thiết lập màu nền cho bảng */
+    z-index: 1; /* Đặt z-index lớn hơn so với background-container để bảng che phủ nền */
+}
+
+.header-yellow-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px; /* Độ rộng của phần màu vàng */
+    height: 150px; /* Chiều cao của phần màu vàng */
+    background-color: #F6C90E; /* Màu nền màu vàng */
+    border-bottom-right-radius: 100px; /* Bo tròn góc trên bên trái */
+    z-index: -1; /* Đặt thứ tự hiển thị thấp hơn */
+}
+
+
+.table-container {
+    border: 1px solid #777777;
+    border-radius: 10px;
+    padding: 28px;
+    width: 300px;
+    height: 600px;
+    margin: 0 30px;
+}
+
+
+
+header h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+header img {
+    max-width: 50px; /* Độ rộng tối đa của hình ảnh là 100px */
+    margin-right: 10px; /* Khoảng cách phía bên phải của hình ảnh là 10px */
+    vertical-align: middle; /* Căn chỉnh dọc giữa */
+
+}
+.products {
+    overflow: auto; /* Tạo thanh cuộn dọc khi có nhiều sản phẩm */
+    max-height: 500px; /* Đặt chiều cao tối đa cho khu vực hiển thị sản phẩm */
+    
+}
+.products::-webkit-scrollbar {
+    width: 0px; /* Chiều rộng của thanh cuộn */
+}
+.products .product,
+.cart .cart-item {
+    
+    align-items: center;
+    border-bottom: 1px solid #777777;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.cart .cart-item {
+    display: flex;
+}
+.cart-container {
+    width: 80px; /* Điều chỉnh kích thước ảnh container */
+    height: 80px;
+    overflow: hidden; /* Ẩn bất kỳ phần nào của hình ảnh nằm ngoài container */
+    background-color: #777777; /* Màu nền xám */
+    border-radius: 50px;
+    margin-right: 10px;
+}
+.cart-container img {
+    width: 110px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+    position: absolute; /* Đặt hình ảnh vị trí tuyệt đối để có thể sử dụng transform */
+    
+    transform: translate(-15%, -30%)  rotate(-25deg); /* Dịch chuyển hình ảnh về giữa và nghiêng 45 độ */
+    
+    object-fit: cover; /* Dùng để giữ tỷ lệ khung hình của hình ảnh */
+}
+
+.products .product h3,
+.cart .cart-item h3 {
+    margin: 0;
+}
+
+.products .product p,
+.cart .cart-item p {
+    margin: 5px 0;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quantity img {
+    width: 10px;
+    height: 10px;
+    padding-top: 8px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.image-container {
+    width: 300px; /* Điều chỉnh kích thước ảnh container */
+    height: 380px;
+    position: relative; /* Cần thiết để làm việc với absolute positioning */
+    overflow: hidden; /* Ẩn bất kỳ phần nào của hình ảnh nằm ngoài container */
+    background-color: #777777; /* Màu nền xám */
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+
+
+
+.image-container img {
+    position: absolute; /* Đặt hình ảnh vị trí tuyệt đối để có thể sử dụng transform */
+    top: 45%; /* Đưa hình ảnh lên giữa theo chiều dọc */
+    left: 45%; /* Đưa hình ảnh lên giữa theo chiều ngang */
+    transform: translate(-50%, -50%) rotate(-25deg); /* Dịch chuyển hình ảnh về giữa và nghiêng 45 độ */
+    width: 300px; /* Đảm bảo chiều rộng tự động thích hợp */
+    height: 300px; /* Chiều cao tự động */
+    object-fit: cover; /* Dùng để giữ tỷ lệ khung hình của hình ảnh */
+}
+
+.products .product .price {
+    display: inline-block;
+    font-weight: 600;
+    font-size: larger;
+    margin-top: 13px;
+}
+
+.products .product .add-to-cart {
+    display: inline-block;
+    background-color: #F6C90E; /* Màu nền vàng */
+    padding: 5px 10px; /* Điều chỉnh padding tùy ý */
+    border-radius: 25px; /* Bo góc 25px */
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 140px;
+    height: 50px;
+}
+
+.products .product .description {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+.products .product .image-container {
+    margin-right: 20px; /* Khoảng cách phía bên phải của image-container */
+}
+
+.products .product .description,
+.products .product .add-product {
+    margin-top: 20px; /* Khoảng cách phía trên */
+}
+
+.add-product {
+    display: flex;
+    justify-content:space-between;
+}
+.cart-add-remove{
+    display: flex;
+    justify-content: space-between;
+}
+.button-as {
+    background-color: #777;
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    text-align:center;
+
+}
+
+.button-text {
+    margin-right: 10px;
+}
+
+.remove-item {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: all .25s ease;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6c90e;
+    transition: .2s;
+    font-size: 13px;
+}
+
+.remove-item img {
+    width: 15px;
+    height: 15px;
+}
